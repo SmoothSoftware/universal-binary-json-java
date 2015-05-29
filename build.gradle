@@ -1,8 +1,17 @@
 apply plugin: "java"
 apply plugin: "maven"
+apply plugin: 'maven-publish'
 
 group = "org.ubjson"
 version = "1-SNAPSHOT"
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from components.java
+		}
+	}
+}
 
 dependencies {
 	testCompile "junit:junit:4.10"
